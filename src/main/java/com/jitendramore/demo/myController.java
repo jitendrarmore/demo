@@ -2,6 +2,7 @@ package com.jitendramore.demo;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -35,15 +36,14 @@ public class myController {
         return "Welcome to Expedia String" + name;
     }
 
-}
-@RestController("/myApp")
+}/*
+@SpringBootApplication
+@Configuration
 @PropertySource("classpath:application.properties")
 class myApp {
-    public void myApp() {
-        ConfigurableApplicationContext ctx = SpringApplication.run(myApp.class, "classpath:application.properties");
-        DataBase db = (DataBase)ctx.getBean(DataBase.class);
-        System.out.println("Name : " + db.getName());
-        System.out.println("Password :" + db.getPassword());
-    }
+    public static void myApp() {
 
-}
+    }
+*/
+
+

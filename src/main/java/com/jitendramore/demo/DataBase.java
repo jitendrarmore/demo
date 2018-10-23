@@ -4,13 +4,16 @@ public class DataBase {
     private String name;
     private String password;
 
+    public DataBase() {
+    }
+
     public String getName()
     {
         return name;
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getPassword()
@@ -19,6 +22,6 @@ public class DataBase {
     }
 
     public void setPassword(String password) {
-        password = password;
+        this.password = password;
     }
 }

@@ -14,19 +14,23 @@ import org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactor
 
 @SpringBootApplication
 @Configuration
-
+@PropertySource("classpath:application.properties")
 public class DemoApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(DemoApplication.class, args);
-		SpringApplication.run(DemoApplication.class, args);
+		//SpringApplication.run(DemoApplication.class, args);
+		ConfigurableApplicationContext ctx = SpringApplication.run(DemoApplication.class, "classpath:application.properties");
+		DataBase db = (DataBase)ctx.getBean(DataBase.class);
+		System.out.println("Name : " + db.getName());
+		System.out.println("Password :" + db.getPassword());
 
 	}
 
 
-	@Value("${jitendramore.name}")
+	@Value("${dbusername.name}")
 	public String name;
-	@Value("${jitendramore.password}")
+	@Value("${dbpassword.password}")
 	public String password;
 
 	@Bean
