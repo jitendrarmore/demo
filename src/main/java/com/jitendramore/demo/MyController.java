@@ -4,6 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class MyController {
@@ -17,15 +21,25 @@ public class MyController {
 }
 
 @RestController
+@RequestMapping("/Expedia/v1")
 class myControllar1 {
     @RequestMapping(value = "/jitendra", method = RequestMethod.GET)
     public String JitendraMsg() {
         return "Welcome Jitendra More, You have been onboard. Thank You";
 
     }
-    @RequestMapping("getUser")
-    public String getUsername(@RequestParam(value = "myName") String name) {
-        return "Welcome to Expedia String" + name;
+    @RequestMapping("Users")
+    public List getUsername() {
+        Map user = new HashMap<>();
+        user.put("Name", "Jitendra More");
+        user.put("Address", "Mumbai Haryana");
+        user.put("Mobile", "9833550438");
+        user.put("Company", "Expedia");
+
+        List Users = new ArrayList();
+        Users.add(user);
+
+        return Users;
     }
 }
 
