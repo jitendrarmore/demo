@@ -1,0 +1,38 @@
+# this is use for comments
+Name: Jitendra
+
+Names:
+    -Jitendra
+    -Jatin
+    -Jahnavi
+    -Jaya
+
+
+sign: "a"
+
+#object
+
+book:
+    author: jitendra
+    publisher: my_ramayan
+
+boolen: True
+
+another_boolen: false
+
+String: Hello Java
+
+another_string: "Hello:Java"
+
+contact:
+    mobile: 9958370438
+    email: jeetu.more@gmail.com
+
+---
+spring:
+  profiles:
+    active: dev
+
+contact:
+    mobile: 83692928230
+    email: jeetu.more@gmaildev.com
